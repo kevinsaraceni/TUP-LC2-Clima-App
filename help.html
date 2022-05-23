@@ -7,12 +7,14 @@
     <title>Clima App</title>
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/help.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <h1>
+            <img src="img/logo.png" alt="logo">
             <span>Clima App</span>
         </h1>
         <nav>
@@ -30,19 +32,24 @@
         <p>Para poder consultar el clima, primero deberá <a href="add-city.html">Agregar una ciudad</a> y luego seleccionar la ciudad en cuestión desde la página <a href="index.html">Clima</a>.</p>
         <section>
             <form action="">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre:</label>
                 <input type="text">
                 <br>
-                <label for="email">E-Mail</label>
+                <label for="email">E-Mail:</label>
                 <input type="email">
                 <br>
-                <label for="mensaje">Mensaje</label>
+                <label for="mensaje">Mensaje:</label>
                 <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
                 <br>
-                <input type="button" value="Limpiar">
-                <input type="button" value="Enviar">
+                <div class="buttons">
+                    <button class="button">Limpiar</button>
+                    <button class="button">Enviar</button>
+                </div>
             </form>
         </section>
+        <div class="emailerror">
+            <p>Ingrese un E-Mail válido.</p>
+        </div>
     </main>
     <footer>
         <p>

@@ -1,0 +1,40 @@
+label {
+    display: block;
+}
+
+input,
+#mensaje {
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 5px 5px;
+}
+
+.emailerror {
+    margin: 20px auto;
+    width: 400px;
+    display: block;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.emailerror p {
+    margin-bottom: 0;
+}
