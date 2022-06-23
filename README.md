@@ -1,9 +1,9 @@
 # TUP-LC2-Clima-App
 
-Este proyecto tiene una funcionalidad que permitirá consultar en tiempo real, utilizando una API, el clima en determinadas ciudades del mundo.
+Este proyecto es una página web que tiene una funcionalidad que permitirá consultar en tiempo real, utilizando una API, el clima en determinadas ciudades del mundo.
 
 Construido con 🛠️<br>
-Todos los conocimientos aprendidos en la materia Laboratorio de Computación II, utilizando Visual Studio.
+Todos los conocimientos de HTML, CSS y JavaScript aprendidos en la materia Laboratorio de Computación II, utilizando Visual Studio Code.
 
 Autor ✒️<br>
 Kevin Saraceni
