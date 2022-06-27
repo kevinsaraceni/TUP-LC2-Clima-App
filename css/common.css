@@ -5,12 +5,16 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
- :root {
+:root {
     /* Declaro variables CSS con colores principales */
     --color-theme: #00594c;
     --color-active: #5df2d6;
     --color-back-active: #04957d;
-    --color-gradient: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+    --color-gradient: linear-gradient(to right, var(--color-theme),
+            var(--color-back-active));
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
 }
 
 body {
@@ -132,6 +136,26 @@ main p {
     border: none;
 }
 
+.alert {
+    border-radius: 20px;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    align-self: normal;
+}
+
+.success {
+    background-color: var(--color-success);
+}
+
+.error {
+    background-color: var(--color-error);
+}
+
+.warning {
+    background-color: var(--color-warning);
+}
 
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
 

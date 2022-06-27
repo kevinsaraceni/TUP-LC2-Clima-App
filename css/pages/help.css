@@ -27,7 +27,7 @@ button {
 .emailerror {
     margin: 20px auto;
     width: 400px;
-    display: block;
+    display: none;
     background-color: #dc3545;
     color: white;
     padding: 10px;
