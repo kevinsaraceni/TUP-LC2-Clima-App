@@ -20,7 +20,7 @@ function consultAPI(cityName) {
             displayWeather(data);
         })
         .catch(error => {
-            return "error"
+            return "Error"
         });
 }
 
