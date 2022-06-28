@@ -11,26 +11,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/common.js" defer></script>
     <script src="js/pages/help.js" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init('d7tThim7PTOcV8lFr');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('send', function(event) {
-                event.preventDefault();
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        alert('La consulta se ha enviado correctamente.');
-                    }, function(error) {
-                        alert('Ha habido un error.', error);
-                    });
-            });
-        }
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 
 </head>
 
@@ -67,7 +48,7 @@
                 <br>
                 <div class="buttons">
                     <button class="button" id="clean">Limpiar</button>
-                    <button class="button" id="send">Enviar</button>
+                    <button class="button" id="submit">Enviar</button>
                 </div>
             </form>
         </section>
