@@ -14,7 +14,7 @@ function consultAPI(cityName) {
     return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
         .then(response => {
             if (response.ok) return response.json();
-            throw new Error("error")
+            throw new Error("Error")
         })
         .then(data => {
             displayWeather(data);
