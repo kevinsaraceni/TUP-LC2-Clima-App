@@ -1,6 +1,6 @@
 async function validateCity(newCity) {
     let cities = getCitiesFromLocalStorage();
-  
+
     for (let i = 0; i < cities.length; i++) {
         if (newCity == cities[i]) {
             return "warning";
@@ -9,8 +9,7 @@ async function validateCity(newCity) {
 
     if (await consultAPI(newCity) == "error") {
         return "error";
-    }
-    else {
+    } else {
         return "success";
     };
 }
@@ -18,7 +17,7 @@ async function validateCity(newCity) {
 function removeMessage() {
     setTimeout(function() {
         document.getElementsByClassName("alert")[0].remove();
-    }, 3000);
+    }, 4000);
 }
 
 async function addCityToLocalStorage() {
@@ -26,7 +25,7 @@ async function addCityToLocalStorage() {
     let newCity = document.getElementById("cityAdded").value;
     newCity = newCity.toUpperCase()
 
-    switch(await validateCity(newCity)) {
+    switch (await validateCity(newCity)) {
         case "success":
             cities.push(newCity);
             localStorage.setItem("CITIES", JSON.stringify(cities));

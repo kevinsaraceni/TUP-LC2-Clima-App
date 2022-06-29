@@ -11,7 +11,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/common.js" defer></script>
     <script src="js/pages/help.js" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init('d7tThim7PTOcV8lFr');
@@ -30,7 +31,7 @@
                     });
             });
         }
-    </script>
+    </script>-->
 
 </head>
 
@@ -66,8 +67,8 @@
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 <br>
                 <div class="buttons">
-                    <button class="button" id="clean">Limpiar</button>
-                    <button class="button" id="submit">Enviar</button>
+                    <button class="button" id="clean" onclick="cleanForm()">Limpiar</button>
+                    <button class="button" id="submit" onclick="">Enviar</button>
                 </div>
             </form>
         </section>
