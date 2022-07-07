@@ -1,4 +1,4 @@
-let selector = document.getElementById("selectCity");
+const selector = document.getElementById("selectCity");
 
 function addCitiesToSelector() {
     let cities = getCitiesFromLocalStorage();
@@ -15,16 +15,16 @@ function addCitiesToSelector() {
 
 
 async function createCard() {
-    let responseJson = await consultAPI(selector.value)
-    let city = responseJson.name;
-    let icon = responseJson.weather[0].icon;
-    let temp = responseJson.main.temp;
-    let feelsLike = responseJson.main.feels_like;
-    let humidity = responseJson.main.humidity;
-    let wind = responseJson.wind.speed;
-    let pressure = responseJson.main.pressure;
+    const responseJson = await consultAPI(selector.value)
+    const city = responseJson.name;
+    const icon = responseJson.weather[0].icon;
+    const temp = responseJson.main.temp;
+    const feelsLike = responseJson.main.feels_like;
+    const humidity = responseJson.main.humidity;
+    const wind = responseJson.wind.speed;
+    const pressure = responseJson.main.pressure;
 
-    let card = `<div class="card">
+    const cardSuccess = `<div class="card">
                     <h3>${city}</h3>
                     <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
                     <p>Temperatura: ${temp}°</p>
@@ -34,14 +34,14 @@ async function createCard() {
                     <p>Presión: ${pressure} P</p>
                 </div>`
 
-    let section = document.getElementById("section-weather-result");
-    if (section) {
-        section.innerHTML = "";
-        section.innerHTML += card;
+    const sectionSuccess = document.getElementById("section-weather-result");
+    if (sectionSuccess) {
+        sectionSuccess.innerHTML = "";
+        sectionSuccess.innerHTML += cardSuccess;
     }
 }
 
-let consultButton = document.getElementById("consultWeather");
+const consultButton = document.getElementById("consultWeather");
 consultButton.addEventListener("click", createCard)
 
 addCitiesToSelector();

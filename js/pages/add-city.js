@@ -43,9 +43,9 @@ async function addCityToLocalStorage() {
     };
 };
 
-let successMessage = '<p class="alert success">Ciudad agregada con éxito</p>';
-let errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
-let warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
+const successMessage = '<p class="alert success">Ciudad agregada con éxito</p>';
+const errorMessage = '<p class="alert error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
+const warningMessage = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
-let buttonAddCity = document.getElementById("addCity");
+const buttonAddCity = document.getElementById("addCity");
 buttonAddCity.addEventListener("click", addCityToLocalStorage);
