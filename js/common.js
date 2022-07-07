@@ -9,43 +9,31 @@ function getCitiesFromLocalStorage() {
     return cities;
 }
 
-function consultAPI(cityName) {
-    let apiKey = "fe344ab21ce93d21e7680cf1e4a0dc41"
-    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error("Error")
-        })
-        .then(data => {
-            displayWeather(data);
-        })
-        .catch(error => {
-            return "error"
-        });
-}
+async function consultAPI(cityName) {
 
-function displayWeather(data) {
-    let city = data.name;
-    let icon = data.weather[0].icon;
-    let temp = data.main.temp;
-    let feelsLike = data.main.feels_like;
-    let humidity = data.main.humidity;
-    let wind = data.wind.speed;
-    let pressure = data.main.pressure;
+    const apiKey = "fe344ab21ce93d21e7680cf1e4a0dc41";
 
-    let card = `<div class="card">
-                    <h3>${city}</h3>
-                    <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
-                    <p>Temperatura: ${temp}°</p>
-                    <p>Sensación Térmica: ${feelsLike}°</p>
-                    <p>Humedad: ${humidity}%</p>
-                    <p>Velocidad del Viento: ${wind}km/h</p>
-                    <p>Presión: ${pressure} P</p>
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`);
+    console.log('status code: ', response.status);
+
+    if (response.ok) {
+        let responseJson = await response.json();
+        return responseJson;
+    }
+
+    //Esto está puesto porque al desarmar el código, me permitía agregar cualquier ciudad y agregué esto para que
+    //quede plasmado visualmente que la consulta a la API estaba dando error y que por más que la ciudad estuviera en la lista
+    //no significaba que la consulta se estaba realizando correctamente.
+    if (response.status != 200) {
+        let card = `<div class="card">
+                    <h3>Ha habido un error consultando a la API.</h3>
                 </div>`
 
-    let section = document.getElementById("section-weather-result");
-    if (section) {
-        section.innerHTML = "";
-        section.innerHTML += card;
+        let section = document.getElementById("section-weather-result");
+        if (section) {
+            section.innerHTML = "";
+            section.innerHTML += card;
+        }
+        return "error"
     }
 }

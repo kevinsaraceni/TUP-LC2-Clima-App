@@ -12,7 +12,7 @@
     <script src="js/common.js" defer></script>
     <script src="js/pages/help.js" defer></script>
 
-    <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init('d7tThim7PTOcV8lFr');
@@ -25,14 +25,13 @@
                 this.contact_number.value = Math.random() * 100000 | 0;
                 emailjs.sendForm('contact_service', 'contact_form', this)
                     .then(function() {
-                        console.log('SUCCESS!');
+                        alert('El mensaje ha sido enviado.');
                     }, function(error) {
-                        console.log('FAILED...', error);
+                        console.log('Ha habido un error.', error);
                     });
             });
         }
-    </script>-->
-
+    </script> -->
 </head>
 
 <body>
@@ -55,7 +54,7 @@
         <p>Esta App te permite consultar el clima de una ciudad en particular utilizando la API de <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>.</p>
         <p>Para poder consultar el clima, primero deberá <a href="add-city.html">Agregar una ciudad</a> y luego seleccionar la ciudad en cuestión desde la página <a href="index.html">Clima</a>.</p>
         <section>
-            <form id="contact-form">
+            <form id="contactForm">
                 <input type="hidden" name="contact_number">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="user_name">
@@ -67,8 +66,8 @@
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 <br>
                 <div class="buttons">
-                    <button class="button" id="clean" onclick="cleanForm()">Limpiar</button>
-                    <button class="button" id="submit" onclick="">Enviar</button>
+                    <button type="reset" class="button" id="clean">Limpiar</button>
+                    <button type="submit" class="button" id="submit">Enviar</button>
                 </div>
             </form>
         </section>
